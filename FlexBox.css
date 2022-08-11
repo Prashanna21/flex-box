@@ -97,6 +97,7 @@ h2{
 }
 
 .header .container{
+    padding-top: 4rem;
     display: flex;
     align-items: center;
     
@@ -121,7 +122,24 @@ h2{
     margin-right: 1rem;
 }
 
+.hamburger{
+    display: none;
+}
+
+.bars{
+    display: block;
+    width: 2.5rem;
+    height: 0.3rem;
+    margin: 0.5rem auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
 @media (max-width: 768px) {
+    .logo{
+        z-index: 100;
+    }
+
     .header .container{
        display: block;
        text-align: center;
@@ -130,5 +148,47 @@ h2{
     .boxes .container{
         flex-direction: column;
     }
+
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger.active .bars:nth-child(2){
+        opacity: 0;
+    }
+
+    .hamburger.active .bars:nth-child(1){
+        transform: translateY(0.8rem) rotate(45deg);
+    }
+
+    .hamburger.active .bars:nth-child(3){
+        transform: translateY(-0.8rem) rotate(-45deg);
+    }
+
+    .navigation{
+        z-index: 1;
+        position: fixed;
+        left: 0;
+        top: -100%;
+        gap: 0;
+        background-color: #3474e6;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .navigation ul{
+        flex-direction: column;
+    }
+
+    .navigation li{
+        margin: 1.6rem;
+    }
+
+    .navigation.active{
+        top: 7rem;
+    }
+    
+
+
 }
 

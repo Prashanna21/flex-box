@@ -44,6 +44,8 @@ h2{
 
 .navbar{
     position:fixed;
+    left: 0;
+    right: 0;
     background-color: #3474e6;
     color: #fff;
     padding: 1.5rem 0;
